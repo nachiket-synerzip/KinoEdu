@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Contact us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -23,6 +23,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="components/bootstrap/docs/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="components/bootstrap/docs/assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="components/bootstrap/docs/assets/ico/favicon.png">
+
+    <script data-main="app" src="components/requirejs/require.js"></script>
 </head>
 
 <body>
@@ -32,47 +34,43 @@
     <div class="masthead">
         <ul class="nav nav-pills pull-right">
             <li><a href="index.html">Home</a></li>
-            <li><a href="demo.html">Demo</a></li>
+            <li class="active"><a href="demo.html">Demo</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li class="active"><a href="login.html">Login</a></li>
+            <li><a href="login.html">Login</a></li>
         </ul>
         <h3 class="muted">Kino Edu</h3>
     </div>
 
-    <hr>
 
-    <div class="jumbotron">
-        <h2>Log in</h2>
-
-        <form class="form-signin">
-            <input type="text" class="input-block-level" placeholder="Email address">
-            <input type="password" class="input-block-level" placeholder="Password">
-
-            <button class="btn btn-large btn-primary" type="submit">Login</button>
-            <p class="lead">If you have not signed up, proceed to <a href="signup.html">Sign up</a> Page</a></p>
-        </form>
-        <hr></hr>
-        <p class="lead">Instead of using username/password, you can also directly login with <div class="row-fluid">
-                <div class="span3">
-                    <button class="btn btn-large btn-primary" type="submit">Facebook</button>
-                </div>
-                <div class="span3">
-                    <button class="btn btn-large btn-primary" type="submit">Google</button>
-                </div>
-                <div class="span3">
-                    <button class="btn btn-large btn-primary" type="submit">Twitter</button>
-                </div>
-                <div class="span3">
-                    <button class="btn btn-large btn-primary" type="submit">LinkedIn</button>
-                </div>
-
-            </div></p>
-
-
-
+    <div class="secondhead">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#">Dashboard</a>
+            </li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Certifications</a></li>
+        </ul>
     </div>
 
+    <div class="jumbotron">
+        <div class="row-fluid">
+            <div class="span3">
+                <section data-aura-widget="profile"></section>
+            </div>
+            <div class="span9">
+
+                <div class="span9">
+                    <section data-aura-widget="courseInfo"></section>
+                </div>
+
+                <div class="span9">
+                    <section data-aura-widget="courseInfo"></section>
+                </div>
+            </div>
+        </div>
+        <div> Work under progress ....</div>
+    </div>
 
 
     <hr>

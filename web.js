@@ -28,6 +28,8 @@ app.get('/signup.html', routes.signup);
 
 app.get('/login.html', routes.login);
 
+app.get('/demo.html', routes.demo);
+
 var port = process.env.PORT || 3000;
 
 app.listen(port,function(){

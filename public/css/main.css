@@ -1,0 +1,583 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 900px;
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    margin: 60px 0;
+    text-align: center;
+}
+.jumbotron h1 {
+    font-size: 72px;
+    line-height: 1;
+}
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 60px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+.flex-video {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    height: 0;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.flex-video.widescreen { padding-bottom: 57.25%; }
+.flex-video.vimeo { padding-top: 0; }
+
+.flex-video iframe,
+.flex-video object,
+.flex-video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+    .flex-video { padding-top: 0; }
+}
+
+.form-signin {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+
+
+.user-info {
+    zoom: 1;
+    padding: 0px 0px;
+    text-align: left;
+}
+.user-info:before,.user-info:after {
+    content: "";
+    display: table;
+}
+.user-info:after {
+    clear: both;
+}
+.user-info > ul {
+    background: #fcfcfc;
+    border: 1px solid #bcdaed;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -ms-border-top-left-radius: 4px;
+    -o-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -ms-border-top-right-radius: 4px;
+    -o-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -ms-border-bottom-left-radius: 4px;
+    -o-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -ms-border-bottom-right-radius: 4px;
+    -o-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.15);
+    zoom: 1;
+    margin: 0px;
+    padding: 10px 10px 5px;
+    width: 100%;
+}
+.user-info > ul:before, .user-info > ul:after {
+    content: "";
+    display: table;
+}
+.user-info > ul:after {
+    clear: both;
+}
+.user-info > ul li {
+    zoom: 1;
+    border-bottom: 1px dotted #dcdcdc;
+    list-style: none;
+    margin-bottom: 5px;
+    padding-bottom: 7px;
+}
+.user-info > ul li:last-child {
+    border-bottom: none;
+}
+.user-info > ul li > h2, .user-info > ul li > section.outside-app h1, section.outside-app .user-info > ul li > h1 {
+    font-weight: 700;
+    font-size: 1em;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    color: #0076c0;
+}
+.user-info > ul li:before, .user-info > ul li:after {
+    content: "";
+    display: table;
+}
+.user-info > ul li:after {
+    clear: both;
+}
+.user-info > ul li:hover .title .icon {
+    opacity: 1;
+}
+.user-info > ul li span {
+    display: block;
+}
+.user-info > ul li span.title {
+    color: #646464;
+    font-family: "PT Sans", Verdana, Geneva, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+.user-info > ul li span.title .icon {
+    background-size: cover;
+    float: left;
+    height: 19px;
+    margin: 0 6px 0 0;
+    opacity: 0.6;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0;
+    width: 19px;
+}
+.user-info > ul li span.data {
+    color: #646464;
+    font-size: 0.8em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.user-info > ul .editorlink {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+.my-course {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(255, 255, 255, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(255, 255, 255, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(255, 255, 255, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+    zoom: 1;
+    height: 120px;
+    margin-right: 2.128%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 20;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0;
+}
+.my-course:before, .my-course:after {
+    content: "";
+    display: table;
+}
+.my-course:after {
+    clear: both;
+}
+.my-course:last-child {
+    margin-bottom: none;
+}
+.my-course .cover {
+    background-size: cover;
+    background-position: center center;
+    border: 1px solid #787878;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -ms-border-top-left-radius: 3px;
+    -o-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -ms-border-bottom-left-radius: 3px;
+    -o-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6), 1px 0 0 0 rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6), 1px 0 0 0 rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6), 1px 0 0 0 rgba(255, 255, 255, 0.8);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    max-height: 100%;
+    margin: 0px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0;
+    width: 200px;
+}
+.my-course .cover .shade {
+    background-image: -webkit-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -ms-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -o-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    bottom: 0px;
+    content: "";
+    display: block;
+    left: 0px;
+    position: absolute;
+    z-index: 50;
+    top: 0px;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0;
+    right: 0px;
+}
+.my-course .cover .arrow {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    font-size: 70px;
+    line-height: 110px;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0;
+}
+.my-course .cover:hover .shade {
+    background: rgba(255, 255, 255, 0.3);
+    background-image: -webkit-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -ms-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -o-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+.my-course .info {
+    background: #e8f3f9;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #bcdaed;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -ms-border-top-right-radius: 3px;
+    -o-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -ms-border-bottom-right-radius: 3px;
+    -o-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    left: 201px;
+    height: 100%;
+    max-height: 100%;
+    padding: 0px 10px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+}
+.my-course .info > hgroup {
+    zoom: 1;
+    padding: 12px 0px;
+    width: 100%;
+}
+.my-course .info > hgroup:before, .my-course .info > hgroup:after {
+    content: "";
+    display: table;
+}
+.my-course .info > hgroup:after {
+    clear: both;
+}
+.my-course .info > hgroup .university {
+    background: white;
+    border: 1px solid #b4b4b4;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    color: #646464;
+    display: block;
+    font-style: italic;
+    font-family: "PT Sans", Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    margin-right: 10px;
+    margin-bottom: 0;
+    padding: 5px 10px;
+    float: left;
+}
+.my-course .info > hgroup h3 {
+    display: block;
+    margin-bottom: 0px;
+    overflow: hidden;
+    padding-top: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.my-course .info > hgroup h3 a {
+    color: #3c3c3c;
+    font-weight: 700;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+}
+.my-course .info > hgroup h3 a:hover {
+    text-decoration: underline;
+}
+.my-course .info .course-status {
+    background: #fffcdd;
+    border: 1px solid #c8c8c8;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    margin-top: 17px;
+    margin-right: 2.128%;
+    padding: 5px;
+    width: 65.957%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.my-course .info .course-status p {
+    color: #646464;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.my-course .info .course-status-completed {
+    background: #ccc;
+    color: #fff;
+}
+.my-course .info .course-status-completed p {
+    color: #222;
+}
+.my-course .info .course-status-completed p span {
+    font-weight: bold;
+}
+.my-course .info .enter-course {
+    border: 1px solid #4a8625;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 0 0 #97c579;
+    -moz-box-shadow: inset 0 1px 0 0 #97c579;
+    box-shadow: inset 0 1px 0 0 #97c579;
+    color: white;
+    display: inline;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #6cb33f;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6cb33f), color-stop(100%, #519228));
+    background-image: -webkit-linear-gradient(top, #6cb33f, #519228);
+    background-image: -moz-linear-gradient(top, #6cb33f, #519228);
+    background-image: -ms-linear-gradient(top, #6cb33f, #519228);
+    background-image: -o-linear-gradient(top, #6cb33f, #519228);
+    background-image: linear-gradient(top, #6cb33f, #519228);
+    padding: 6px 18px 7px;
+    text-shadow: 0 1px 0 #417a1c;
+    -webkit-background-clip: padding-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    float: left;
+    font: normal 1rem/1.6rem "PT Sans", Verdana, Geneva, sans-serif;
+    letter-spacing: 0px;
+    padding: 6px 0px;
+    text-align: center;
+    margin-top: 16px;
+    width: 31.915%;
+}
+.my-course .info .enter-course:hover {
+    -webkit-box-shadow: inset 0 1px 0 0 #7bb754;
+    -moz-box-shadow: inset 0 1px 0 0 #7bb754;
+    box-shadow: inset 0 1px 0 0 #7bb754;
+    cursor: pointer;
+    background-color: #629c3d;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #629c3d), color-stop(100%, #4b8526));
+    background-image: -webkit-linear-gradient(top, #629c3d, #4b8526);
+    background-image: -moz-linear-gradient(top, #629c3d, #4b8526);
+    background-image: -ms-linear-gradient(top, #629c3d, #4b8526);
+    background-image: -o-linear-gradient(top, #629c3d, #4b8526);
+    background-image: linear-gradient(top, #629c3d, #4b8526); }
+.my-course .info .enter-course:active {
+    border: 1px solid #4a8625;
+    -webkit-box-shadow: inset 0 0 8px 4px #447823, inset 0 0 8px 4px #447823, 0 1px 1px 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 8px 4px #447823, inset 0 0 8px 4px #447823, 0 1px 1px 0 #eeeeee;
+    box-shadow: inset 0 0 8px 4px #447823, inset 0 0 8px 4px #447823, 0 1px 1px 0 #eeeeee; }
+.my-course > a:hover .cover .shade {
+    background-image: -webkit-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -ms-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: -o-linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%); }
+.my-course > a:hover .cover .arrow {
+    opacity: 1;
+}
+.my-course > a:hover .info .course-status {
+    background: #fffbce;
+    border-color: silver;
+    -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    -moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.6); }
+.my-course > a:hover .info .course-status-completed {
+    background: #888;
+    color: #fff;
+}

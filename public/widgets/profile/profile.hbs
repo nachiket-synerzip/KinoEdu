@@ -1,0 +1,26 @@
+<section class="user-info">
+  <ul>
+      <li>
+        <h2 class="account-details">Account Details</h2>
+      </li>
+      <li>
+        <span class="title">Full Name</span><span class="data">{{name}}</span>
+      </li>
+    <li>
+      <span class="title">Username</span><span class="data">{{username}}</span>
+    </li>
+    <li>
+      <span class="title">Email</span><span class="data">{{email}}</span>
+    </li>
+    <li>
+      <span class="title"><a href="#password_reset_complete" rel="leanModal" id="pwd_reset_button">Reset Password</a></span>
+      <form id="password_reset_form" method="post" data-remote="true" action="/password_reset/">
+        <input id="id_email" type="hidden" name="email" maxlength="75" value="{{email}}">
+
+      </form>
+    </li>
+    <li class="editorlink">
+        <a href="#edit_profile">Edit Profile</a>
+    </li>
+  </ul>
+</section>

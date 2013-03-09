@@ -4,6 +4,12 @@
     "main": "",
     "dependencies": {
         "jquery": "~1.7.2",
-        "bootstrap": "latest"
+        "bootstrap": "latest",
+        "requirejs-i18n": "latest",
+        "require-handlebars-plugin": "latest",
+        "jquery-ui": "latest",
+        "backbone": "latest",
+        "backbone.localStorage": "latest",
+        "jquery.cookie": "latest"
     }
 }

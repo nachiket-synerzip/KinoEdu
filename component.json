@@ -6,6 +6,7 @@
         "jquery": "~1.7.2",
         "bootstrap": "latest",
         "requirejs": "latest",
+        "aura" : "latest",
         "requirejs-i18n": "latest",
         "require-handlebars-plugin": "latest",
         "jquery-ui": "latest",

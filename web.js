@@ -24,10 +24,6 @@ app.get('/',function(req,res){
 app.get('/index.html', routes.index);
 app.get('/about.html', routes.about);
 app.get('/contact.html', routes.contact);
-app.get('/signup.html', routes.signup);
-
-app.get('/login.html', routes.login);
-
 app.get('/courses.html', routes.courses);
 
 var port = process.env.PORT || 3000;

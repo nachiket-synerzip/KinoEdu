@@ -22,6 +22,6 @@ exports.login = function(req, res){
     res.render('login', { title: 'Express' });
 };
 
-exports.demo = function(req, res){
-    res.render('demo', { title: 'Express' });
+exports.courses = function(req, res){
+    res.render('courses', { title: 'Express' });
 };

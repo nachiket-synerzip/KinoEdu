@@ -28,7 +28,7 @@ app.get('/signup.html', routes.signup);
 
 app.get('/login.html', routes.login);
 
-app.get('/demo.html', routes.demo);
+app.get('/courses.html', routes.courses);
 
 var port = process.env.PORT || 3000;
 

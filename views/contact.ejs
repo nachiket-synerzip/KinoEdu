@@ -31,13 +31,13 @@
 
     <div class="masthead">
         <ul class="nav nav-pills pull-right">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="demo.html">Demo</a></li>
+            <li><a href="courses.html">Courses</a></li>
             <li><a href="about.html">About</a></li>
             <li class="active"><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="#login" data-toggle="modal">Login</a></li>
+            <li><a href="#signup" data-toggle="modal">Sign Up</a></li>
         </ul>
-        <h3 class="muted">Kino Edu</h3>
+        <h3 class="muted"><a href="index.html">KinoEdu</a></h3>
     </div>
 
     <hr>
@@ -71,6 +71,71 @@
 
 </div> <!-- /container -->
 
+<!-- Modal -->
+<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Sign Up</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-signin">
+            <input type="text" class="input-block-level" placeholder="First Name">
+            <input type="text" class="input-block-level" placeholder="Last Name">
+            <input type="text" class="input-block-level" placeholder="Email address">
+            <input type="password" class="input-block-level" placeholder="Password">
+            <input type="password" class="input-block-level" placeholder="Repeat Password">
+            <button class="btn btn-large btn-primary" type="submit">Sign up</button>
+        </form>
+        <p class="lead">Already have Account. <a href="#login" data-toggle="modal" onclick="$('#signup').modal('hide')">Log in</a></p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="loginLabel">Login</h3>
+    </div>
+    <div class="modal-body">
+
+        <form class="form-signin">
+            <input type="text" class="input-block-level" placeholder="Email address"/>
+            <input type="password" class="input-block-level" placeholder="Password"/>
+
+            <button class="btn btn-large btn-primary" type="submit">Login</button>
+
+        </form>
+        <div class="row-fluid">
+            <div class="span3 offset2"><p class="lead">Login with </p></div>
+            <div class="span1">
+                <a href="#"><img src="images/facebook-login.png"></img></a>
+            </div>
+            <div class="span1">
+                <a href="#"><img src="images/google-login.png"></img></a>
+            </div>
+            <div class="span1">
+                <a href="#"><img src="images/linkedin-login.png"></img></a>
+            </div>
+            <div class="span1">
+                <a href="#"><img src="images/twitter-login.png"></img></a>
+            </div>
+
+        </div>
+        <hr></hr>
+        <p class="lead">If you have not signed up, proceed to <a href="#signup" data-toggle="modal" onclick="$('#login').modal('hide')">Sign up</a> Page</a></p>
+
+
+</div>
+<div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+
+</div>
+</div>
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

@@ -10,6 +10,8 @@ require('./config/express')(app);
 // Bootstrap routes
 require('./config/routes')(app);
 
+module.exports = app;
+
 var port = process.env.PORT || 3000;
 
 app.listen(port,function(){

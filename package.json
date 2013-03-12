@@ -11,6 +11,10 @@
         "emailjs": "0.3.3",
         "mongoose":"latest"
     },
+    "devDependencies":{
+        "mocha":"latest",
+        "supertest":"latest"
+    },
     "engines":{
         "node":"0.8.x",
         "npm":"1.1.x"

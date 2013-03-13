@@ -1,14 +1,26 @@
-var express = require('express');
-var app = express();
+var express = require('express')
+    ,app = express()
+    ,passport = require('passport')
+    ,fs = require('fs')
+    ,config = require('./config/config')['development']
 
 // database settings
-require('./config/database')();
+require('./config/database')(config);
+
+// Bootstrap models
+var models_path = __dirname + '/app/models'
+fs.readdirSync(models_path).forEach(function (file) {
+    require(models_path+'/'+file)
+})
+
+// bootstrap passport config
+require('./config/passport')(passport, config)
 
 // express settings
-require('./config/express')(app);
+require('./config/express')(app,config,passport);
 
 // Bootstrap routes
-require('./config/routes')(app);
+require('./config/routes')(app,config,passport);
 
 module.exports = app;
 

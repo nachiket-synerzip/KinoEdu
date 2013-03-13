@@ -2,18 +2,29 @@
     "name":"KinoEdu",
     "version": "0.0.1",
     "dependencies":{
-        "express": "3.1.0",
-        "ejs": "0.8.3",
-        "passport": "0.1.16",
-        "passport-google": "0.3.0",
+        "express": "latest",
+        "ejs": "latest",
         "bower":"latest",
-        "moment" : "1.7.2",
-        "emailjs": "0.3.3",
-        "mongoose":"latest"
+        "moment" : "latest",
+        "emailjs": "latest",
+        "mongoose":"latest",
+        "bcrypt" : "latest",
+        "connect-mongo": "latest",
+        "connect-flash": "latest",
+        "passport": "latest",
+        "passport-local": "latest",
+        "passport-google-oauth":"latest",
+        "passport-twitter":"latest",
+        "passport-facebook":"latest",
+        "passport-linkedin":"latest",
+        "underscore":"latest" ,
+        "view-helpers": "latest"
+
     },
     "devDependencies":{
         "mocha":"latest",
-        "supertest":"latest"
+        "supertest":"latest",
+        "should":"latest"
     },
     "engines":{
         "node":"0.8.x",

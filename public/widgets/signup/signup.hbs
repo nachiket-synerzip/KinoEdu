@@ -1,0 +1,19 @@
+<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Sign Up</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-signin">
+            <input name="name" type="text" class="input-block-level" placeholder="Full Name"/>
+            <input name="username" type="text" class="input-block-level" placeholder="User Name"/>
+            <input name="email" type="text" class="input-block-level" placeholder="Email address"/>
+            <input name="password" type="password" class="input-block-level" placeholder="Password"/>
+            <input name="repeat-password" type="password" class="input-block-level" placeholder="Repeat Password"/>
+            <button class="signup btn btn-large btn-primary" >Sign up</button>
+        </form>
+        <p class="lead">Already have Account. <a href="#login" data-toggle="modal" onclick="$('#signup').modal('hide')">Log in</a></p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+
+    </div>

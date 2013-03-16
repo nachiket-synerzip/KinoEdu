@@ -18,13 +18,6 @@ define(function() {
         app.core.mvc    = Backbone;
         app.sandbox.mvc = Backbone;
         app.core.registerWidgetType('Backbone', Backbone.View.prototype);
-      },
-      afterAppStart: function(app) {
-        if (!historyStarted) {
-          _.delay(function() {
-            Backbone.history.start();  
-          }, 200);
-        }
       }
     }
   }

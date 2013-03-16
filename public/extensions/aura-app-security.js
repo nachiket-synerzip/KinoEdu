@@ -23,7 +23,23 @@ define(function () {
                 return ret;
             },
             initialize:function (app) {
-                console.log("Initialized Aura OAuth Callback Extension");
+                app.sandbox.security = {};
+                app.sandbox.security.login = function(){
+
+                };
+
+                app.sandbox.security.logout = function(){
+
+                };
+
+                app.sandbox.security.isLoggedIn = function(){
+
+                };
+
+                app.sandbox.security.getUserProfile = function(){
+
+                };
+
                 //TODO add functionality to clear the OAuth parameters from url once we have consumed them
                 app.sandbox.oauth = {};
                 app.sandbox.oauth.clearUri = function(){

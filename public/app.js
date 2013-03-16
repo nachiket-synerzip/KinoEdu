@@ -13,7 +13,8 @@ define(['components/aura/lib/aura'], function(Aura) {
         .use('extensions/aura-handlebars')
         .use('extensions/aura-ajax')
         .use('extensions/aura-storage')
-        .use('extensions/aura-oauth-handler')
+        .use('extensions/aura-app-security')
+        .use('extensions/aura-router')
         .start({ widgets: 'body' }).then(function() {
             console.warn('Aura started...');
         });

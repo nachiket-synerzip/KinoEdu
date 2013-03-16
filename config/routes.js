@@ -9,13 +9,10 @@
 module.exports = function (app,config,passport) {
 
     app.get('/',function(req,res){
-        res.redirect('/index.html');
+        res.redirect('/index.html#!home');
     });
     var appPages = require('../app/controllers/pages/main');
     app.get('/index.html', appPages.index);
-    app.get('/about.html', appPages.about);
-    app.get('/contact.html', appPages.contact);
-    app.get('/courses.html', appPages.courses);
 
     var courses = require('../app/controllers/api/courses');
     app.get('/api/courses', courses.findAllCourses);

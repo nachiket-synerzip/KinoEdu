@@ -19,14 +19,14 @@
         "passport-linkedin":"latest",
         "underscore":"latest" ,
         "view-helpers": "latest",
-	    "oauth2orize":"latest",
-        "restler":"latest"
+	    "oauth2orize":"latest"
 
     },
     "devDependencies":{
         "mocha":"latest",
         "supertest":"latest",
-        "should":"latest"
+        "should":"latest",
+        "restler":"latest"
     },
     "engines":{
         "node":"0.8.x",

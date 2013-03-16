@@ -12,9 +12,11 @@ var express = require('express')
     , helpers = require('view-helpers')
 
 
+
 module.exports = function (app,config,passport) {
 
     app.configure(function(){
+
         app.use(express.static(__dirname + '/../public'));
         app.set('views',__dirname+'/../app/views');
 
@@ -44,6 +46,7 @@ module.exports = function (app,config,passport) {
         app.use(passport.initialize())
         app.use(passport.session())
         app.use(app.router);
+
 
     });
 

@@ -13,7 +13,7 @@ var assert = require("assert")
 
 // database settings
 require('../config/database')(config);
-require('../app/models/user');
+require('../oauth-server/models/user');
 
 var User = mongoose.model('User')
 

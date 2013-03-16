@@ -1,0 +1,15 @@
+{{#if loginToken }}
+<div class="row-fluid grant">
+    <div class="span4 offset4" >
+        <h3>Grant Access</h3>
+        <b>User is asking following permissions</b>
+        <ul>
+            {{#each scope}}
+                <li>{{permission}}</li>
+            {{/each}}
+        </ul>
+        <button id="grant" class="btn-small btn-primary">Grant</button>
+        <button id="deny" class="btn-small btn-primary">Deny</button>
+    </div>
+</div>
+{{/if}}

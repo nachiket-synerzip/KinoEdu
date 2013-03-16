@@ -1,18 +1,14 @@
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="loginLabel">Login</h3>
-</div>
-<div class="modal-body">
+{{#unless loginToken }}
+<div class="row-fluid form">
 
-    <form class="form-signin">
-        <input type="text" class="input-block-level" placeholder="Email address"/>
-        <input type="password" class="input-block-level" placeholder="Password"/>
+    <div class="form-signin">
+            <input name="email" type="text" class="input-block-level" placeholder="Email address"/>
+            <input name="password" type="password" class="input-block-level" placeholder="Password"/>
+            <button name="submit" class="login btn btn-large btn-primary">Login</button>
 
-        <button class="login btn btn-large btn-primary">Login</button>
-
-    </form>
+    </div>
     <div class="row-fluid">
-        <div class="span3 offset2"><p class="lead">Login with </p></div>
+        <div class="span2 offset2"><p class="lead">Login with </p></div>
         <div class="span1">
             <a href="#"><img src="images/facebook-login.png"></img></a>
         </div>
@@ -32,7 +28,4 @@
 
 
 </div>
-<div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-
-</div>
+{{/unless}}

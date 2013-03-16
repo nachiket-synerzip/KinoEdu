@@ -18,7 +18,9 @@
         "passport-facebook":"latest",
         "passport-linkedin":"latest",
         "underscore":"latest" ,
-        "view-helpers": "latest"
+        "view-helpers": "latest",
+	    "oauth2orize":"latest",
+        "restler":"latest"
 
     },
     "devDependencies":{
@@ -31,6 +33,10 @@
         "npm":"1.1.x"
     },
     "scripts":{
+        "start": "foreman start",
+        "test": "mocha -R spec test/usermodeltest --timeout 50000",
+        "predeploy": "echo This will be run before deploying the app",
+        "postdeploy": "echo This will be run after deploying the app",
         "postinstall":"./node_modules/bower/bin/bower install"
     }
 }

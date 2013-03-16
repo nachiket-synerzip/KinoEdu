@@ -17,6 +17,7 @@ module.exports = function (app,config,passport) {
     app.configure(function(){
         app.use(express.static(__dirname + '/../public'));
         app.set('views',__dirname+'/../app/views');
+
         app.set('view engine','ejs');
         app.use(express.favicon());
         app.use(express.logger('dev'));

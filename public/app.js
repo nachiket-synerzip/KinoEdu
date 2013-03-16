@@ -8,10 +8,12 @@
 
 define(['components/aura/lib/aura'], function(Aura) {
     Aura()
-        .use('extensions/aura-awesome-extension')
         .use('extensions/aura-backbone')
         .use('extensions/aura-localstorage')
         .use('extensions/aura-handlebars')
+        .use('extensions/aura-ajax')
+        .use('extensions/aura-storage')
+        .use('extensions/aura-oauth-handler')
         .start({ widgets: 'body' }).then(function() {
             console.warn('Aura started...');
         });

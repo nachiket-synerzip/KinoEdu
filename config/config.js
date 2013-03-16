@@ -11,7 +11,7 @@ module.exports = {
         app: {
             name: 'KinoEdu'
         },
-        db: process.env.MONGOLAB_URI ||process.env.MONGOHQ_URL,
+        db: 'mongodb://localhost/kinoedu',
         facebook: {
             clientID: process.env.facebook_clientID
             , clientSecret: process.env.facebook_clientSecret

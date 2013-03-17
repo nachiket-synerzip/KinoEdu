@@ -13,6 +13,8 @@
 
 var mongoose = require('mongoose')
     , User = mongoose.model('User')
+    , passport = require('passport')
+
 
 /**
  * Create user
@@ -70,37 +72,10 @@ exports.signup = function (req, res) {
 /**
  * Find user by id
  */
+exports.login = function(req,res){
 
-exports.login = function (req, res) {
-    var emailAddress = req.body.email;
-    var password = req.body.password;
-    console.log(emailAddress + " : "+password);
-    User.findOne(
-        {
-            email:emailAddress
-        }
-        ,function (err, user) {
-            console.log(err);
-            console.log(user);
-            if(user!=null && user.authenticate(password)){
-                //TODO Send a token, with expiry to client
-                //TODO Generate the short lived token
-                res.send({status:"success",token:"token123"});
-            }
-            else{
+}
 
-                return res.send({
-                    "status":"failure",
-                    "err":{
-                        errors:{
-                            "invalid username password":{
-                                type:"Username Password did not match!"
-                            }
-                        }
-                    }
-                })
-            }
+exports.fblogin = function(req,res){
 
-        }
-    )
 }

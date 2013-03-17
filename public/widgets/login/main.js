@@ -10,6 +10,10 @@ define(['underscore','hbs!./template', 'hbs!./login','hbs!./grant','hbs!./error'
                 this.login();
                 return;
             },
+            'click .facebook':function(e){
+                this.fbLogin();
+                return;
+            },
             'click #grant':function(e){
                 this.grant();
                 return;
@@ -30,6 +34,27 @@ define(['underscore','hbs!./template', 'hbs!./login','hbs!./grant','hbs!./error'
 
             var self = this;
             this.sandbox.post('/api/login', data, function (data) {
+                    if (data.status == 'failure') {
+                        alert('Got Error');
+                    }
+                    else {
+                        self.sandbox.set('loginToken',data.token);
+                        self.render();
+                    }
+                },
+                function (errMsg) {
+                    self.errorView.html(errMsg);
+                    self.grantView.hide();
+                    self.formView.show();
+                    self.errorView.show();
+                }
+            );
+
+        },
+        fbLogin:function(){
+            var data = {};
+            var self = this;
+            this.sandbox.post('/api/fbLogin', data, function (data) {
                     if (data.status == 'failure') {
                         alert('Got Error');
                     }

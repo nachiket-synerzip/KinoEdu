@@ -48,7 +48,10 @@
     <hr></hr>
 
     <div class="jumbotron">
+        <% if (req.isAuthenticated()) { %>
 
+            <h1>Already Logged In</h1>
+        <% } %>
         <section data-aura-widget="login"></section>
     </div>
 
@@ -61,17 +64,7 @@
 </div> <!-- /container -->
 
 
-<!-- Modal -->
-<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <section data-aura-widget="signup"></section>
-</div>
 
-
-<!-- Modal -->
-<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <section data-aura-widget="login"></section>
-
-</div>
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

@@ -23,12 +23,13 @@ var UserSchema = new Schema({
     name: String,
     email: String,
     username: String,
+    photo : String,
     provider: String,
     hashed_password: String,
     salt: String,
     facebook: {},
     twitter: {},
-    github: {},
+    linkedin: {},
     google: {}
 })
 

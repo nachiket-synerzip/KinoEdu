@@ -15,22 +15,22 @@ module.exports = {
         facebook: {
             clientID: process.env.facebook_clientID
             , clientSecret: process.env.facebook_clientSecret
-            , callbackURL: 'http://localhost:5000/'
+            , callbackURL: 'http://localhost:5000/auth/facebook/callback'
         },
         twitter: {
             clientID: process.env.twitter_clientID
             , clientSecret: process.env.twitter_clientSecret
-            , callbackURL: 'http://localhost:5000/'
+            , callbackURL: 'http://localhost:5000/auth/twitter/callback'
         },
         linkedin: {
             clientID: process.env.linkedin_clientID
             , clientSecret: process.env.linkedin_clientSecret
-            , callbackURL: 'http://localhost:5000/'
+            , callbackURL: 'http://localhost:5000/auth/linkedin/callback'
         },
         google: {
             clientID: process.env.google_clientID
             , clientSecret: process.env.google_clientSecret
-            , callbackURL: 'http://localhost:5000/'
+            , callbackURL: 'http://localhost:5000/auth/google/callback'
         }
     }
     , test: {

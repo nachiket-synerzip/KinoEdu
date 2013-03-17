@@ -28,7 +28,50 @@ module.exports = function (app,config,passport) {
 
     var users = require('../oauth-server/controllers/api/users')
     app.post('/api/signup', users.signup)
-    app.post('/api/login', users.login)
 
+
+    app.post('/api/login',function(req,res){
+        req.session.redirect_url=req.headers.referer;
+        passport.authenticate('local', { successRedirect: req.session.redirect_url,failureRedirect: '/login.html',failureFlash: true })(req,res);
+    });
+
+
+    app.get('/auth/facebook', function(req,res){
+        req.session.redirect_url=req.headers.referer;
+        passport.authenticate('facebook',{ scope: ['email'] })(req,res);
+    });
+    app.get('/auth/facebook/callback', function(req,res){
+        passport.authenticate('facebook', { successRedirect: req.session.redirect_url,
+            failureRedirect: '/login.html' })(req,res);
+    });
+
+
+    app.get('/auth/twitter',function(req,res){
+        req.session.redirect_url=req.headers.referer;
+        passport.authenticate('twitter')(req,res);
+    });
+    app.get('/auth/twitter/callback',function(req,res){
+        passport.authenticate('twitter', { successRedirect: req.session.redirect_url,
+            failureRedirect: '/login.html' })(req,res);
+    });
+
+    app.get('/auth/google',function(req,res){
+        req.session.redirect_url=req.headers.referer;
+        passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/userinfo.profile','https://www.googleapis.com/auth/userinfo.email'] })(req,res);
+    });
+    app.get('/auth/google/callback',function(req,res){
+        passport.authenticate('google', { successRedirect: req.session.redirect_url,
+            failureRedirect: '/login.html' })(req,res);
+    });
+
+
+    app.get('/auth/linkedin',function(req,res){
+        req.session.redirect_url=req.headers.referer;
+        passport.authenticate('linkedin',{ scope: ['r_basicprofile', 'r_emailaddress'] })(req,res);
+    });
+    app.get('/auth/linkedin/callback',function(req,res){
+        passport.authenticate('linkedin', { successRedirect: req.session.redirect_url,
+            failureRedirect: '/login.html' })(req,res);
+    });
 
 }

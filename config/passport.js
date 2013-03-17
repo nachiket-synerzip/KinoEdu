@@ -11,7 +11,7 @@ var mongoose = require('mongoose')
     , TwitterStrategy = require('passport-twitter').Strategy
     , FacebookStrategy = require('passport-facebook').Strategy
     , LinkedInStratergy = require('passport-linkedin').Strategy
-    , GoogleStrategy = require('passport-google-oauth').Strategy
+    , GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
     , User = mongoose.model('User')
 
 
@@ -35,10 +35,7 @@ module.exports = function (passport, config) {
             passwordField: 'password'
         },
         function(email, password, done) {
-            console.log("Inside Local Strategry");
-            User.findOne({ email: email }, function (err, user) {
-                console.log(err);
-                console.log(user);
+            User.findOne({ email: email,provider:'local' }, function (err, user) {
                 if (err) { return done(err) }
                 if (!user) {
                     return done(null, false, { message: 'Unknown user' })
@@ -58,17 +55,28 @@ module.exports = function (passport, config) {
             , callbackURL: config.twitter.callbackURL
         },
         function(token, tokenSecret, profile, done) {
+            console.log("----------------------");
+            console.log("Twitter");
+            console.log("----------------------");
+            console.log(profile);
+            console.log("----------------------");
             User.findOne({ 'twitter.id': profile.id }, function (err, user) {
+
                 if (err) { return done(err) }
                 if (!user) {
+
                     user = new User({
                         name: profile.displayName
                         , username: profile.username
+                        , photo :  profile.photos[0].value
                         , provider: 'twitter'
-                        , twitter: profile._json
+                        , twitter:{
+                            id:profile._json.id
+                        }
                     })
                     user.save(function (err) {
                         if (err) console.log(err)
+
                         return done(err, user)
                     })
                 }
@@ -84,17 +92,27 @@ module.exports = function (passport, config) {
             clientID: config.facebook.clientID
             , clientSecret: config.facebook.clientSecret
             , callbackURL: config.facebook.callbackURL
+            , profileFields: ['id', 'displayName','emails','username','photos']
         },
         function(accessToken, refreshToken, profile, done) {
+            console.log("----------------------");
+            console.log("facebook");
+            console.log("----------------------");
+            console.log(profile);
+            console.log("----------------------");
+
             User.findOne({ 'facebook.id': profile.id }, function (err, user) {
                 if (err) { return done(err) }
                 if (!user) {
                     user = new User({
                         name: profile.displayName
                         , email: profile.emails[0].value
+                        , photo :  profile.photos[0].value
                         , username: profile.username
                         , provider: 'facebook'
-                        , facebook: profile._json
+                        , facebook: {
+                            'id':profile._json.id
+                        }
                     })
                     user.save(function (err) {
                         if (err) console.log(err)
@@ -111,30 +129,66 @@ module.exports = function (passport, config) {
     passport.use(new LinkedInStratergy({
             consumerKey: config.linkedin.clientID
             ,consumerSecret: config.linkedin.clientSecret
-            ,callbackURL: config.linkedin.callbackURL
+            ,callbackURL: config.linkedin.callbackURL ,
+            profileFields: ['id', 'first-name', 'last-name', 'email-address', 'picture-url','headline']
         },
         function(token, tokenSecret, profile, done) {
-            User.findOrCreate({ linkedinId: profile.id }, function (err, user) {
-                return done(err, user);
-            });
+            console.log("----------------------");
+            console.log("Linkedin");
+            console.log("----------------------");
+            console.log(profile);
+            console.log("----------------------");
+
+            User.findOne({ 'linkedin.id': profile.id }, function (err, user) {
+                if (err) { return done(err) }
+                if (!user) {
+
+                    user = new User({
+                        name: profile.displayName
+                        , email: profile.emails[0].value
+                        , photo:profile._json.pictureUrl
+                        , username: profile.username
+                        , provider: 'linkedin'
+                        , linkedin: {
+                            id:profile._json.id
+                        }
+                    })
+                    user.save(function (err) {
+                        if (err) console.log(err)
+                        return done(err, user)
+                    })
+                }
+                else {
+                    return done(err, user)
+                }
+            })
         }
     ));
 
     // use google strategy
     passport.use(new GoogleStrategy({
-            consumerKey: config.google.clientID,
-            consumerSecret: config.google.clientSecret,
+            clientID: config.google.clientID,
+            clientSecret: config.google.clientSecret,
             callbackURL: config.google.callbackURL
         },
         function(accessToken, refreshToken, profile, done) {
+            console.log("----------------------");
+            console.log("Google");
+            console.log("----------------------");
+            console.log(profile);
+            console.log("----------------------");
+
             User.findOne({ 'google.id': profile.id }, function (err, user) {
                 if (!user) {
                     user = new User({
                         name: profile.displayName
                         , email: profile.emails[0].value
-                        , username: profile.username
+                        , photo :  profile._json.picture
+                        , username: profile.emails[0].value
                         , provider: 'google'
-                        , google: profile._json
+                        , google: {
+                            'id':profile._json.id
+                        }
                     })
                     user.save(function (err) {
                         if (err) console.log(err)

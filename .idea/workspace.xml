@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3686d1e-b4fe-4b91-98ed-ed26264ab4f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.js" afterPath="$PROJECT_DIR$/config/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
     </list>
     <ignored path="KinoEdu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +52,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="48" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.6751269">
+            <state line="13" column="1" selection-start="576" selection-end="576" vertical-scroll-proportion="0.52791876">
               <folding />
             </state>
           </provider>
@@ -646,7 +643,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="48" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.6751269">
+        <state line="13" column="1" selection-start="576" selection-end="576" vertical-scroll-proportion="0.52791876">
           <folding />
         </state>
       </provider>

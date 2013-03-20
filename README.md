@@ -8,10 +8,10 @@ tells which user is topping the list of successfully taking courses
 or creating courses.
 
 The platform would support following in Phase 1
-# Create Public and Free Courses and List them
-# Allow Users to take Public and Free Courses and gain certification once they complete the courses
-# Allow Users to show the Certificates on Social networking sites
-# List Top Certification Holders and Course Creators in a Leadership Board
+* Create Public and Free Courses and List them
+* Allow Users to take Public and Free Courses and gain certification once they complete the courses
+* Allow Users to show the Certificates on Social networking sites
+* List Top Certification Holders and Course Creators in a Leadership Board
 
 Setup
 ======

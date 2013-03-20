@@ -2,7 +2,7 @@ var express = require('express')
     ,app = express()
     ,passport = require('passport')
     ,fs = require('fs')
-    ,config = require('./config/config')['development']
+    ,config = require('./config/config')[process.env.AppMode||'development']
 
 
 

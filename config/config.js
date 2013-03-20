@@ -44,22 +44,22 @@ module.exports = {
         facebook: {
             clientID: process.env.facebook_clientID
             , clientSecret: process.env.facebook_clientSecret
-            , callbackURL: 'http://www.kinoedu.com'
+            , callbackURL: 'http://www.kinoedu.com/auth/facebook/callback'
         },
         twitter: {
             clientID: process.env.twitter_clientID
             , clientSecret: process.env.twitter_clientSecret
-            , callbackURL: 'http://www.kinoedu.com'
+            , callbackURL: 'http://www.kinoedu.com/auth/twitter/callback'
         },
         linkedin: {
             clientID: process.env.linkedin_clientID
             , clientSecret: process.env.linked_clientSecret
-            , callbackURL: 'http://www.kinoedu.com'
+            , callbackURL: 'http://www.kinoedu.com/auth/linkedin/callback'
         },
         google: {
             clientID: process.env.google_clientID
             , clientSecret: process.env.google_clientSecret
-            , callbackURL: 'http://www.kinoedu.com'
+            , callbackURL: 'http://www.kinoedu.com/auth/google/callback'
         }
     }
 }

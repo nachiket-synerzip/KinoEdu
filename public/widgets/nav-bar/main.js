@@ -11,6 +11,7 @@ define(['underscore', 'hbs!./nav-bar'], function (_, navBarTemplate) {
 
         initialize:function () {
             this.render();
+            this.render();
 
         },
 
@@ -25,7 +26,7 @@ define(['underscore', 'hbs!./nav-bar'], function (_, navBarTemplate) {
 
             var data = {};
             data.userProfile = userProfile;
-            data.loginUrl=baseUri+"/login.html"+"?client_id=123&scope=1,2,3&redirect_uri="+baseUri+"/index.html&response_type=grant&state=abc"
+            data.loginUrl=baseUri+"/grant.html"+"?client_id=kino&scope=view-profile,manage-profile,view-courses,manage-courses&redirect_uri="+baseUri+"/index.html&response_type=grant&state=abc"
             this.html(navBarTemplate(data));
 
         }

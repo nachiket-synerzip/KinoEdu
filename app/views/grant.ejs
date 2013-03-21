@@ -49,41 +49,29 @@
 
     <div class="jumbotron">
 
-        <div class="row-fluid form">
-            <% if (!req.isAuthenticated()){ %>
+        <div class="row-fluid grant">
+            <div class="span4 offset4" >
+                <h3>Grant Access</h3>
+                <b>User is asking following permissions</b>
+                <form action="/grant.html" method="post">
 
-                <%= req.flash('error') %>
-            <form class="form-signin" action="/login.html" method="post">
-                <input name="email" type="text" class="input-block-level" placeholder="Email address"/>
-                <input name="password" type="password" class="input-block-level" placeholder="Password"/>
-                <input name="redirect_uri" type="hidden" value="<%=req.query['redirect_uri']%>"/>
-                <button name="submit" class="login btn btn-large btn-primary">Login</button>
+                    <input type="hidden" name="clientId" value="<%= clientId%>"></input>
+                    <input type="hidden" name="redirectURI" value="<%= redirectURI%>"></input>
+                    <input type="hidden" name="state" value="<%= state%>"></input>
+                    <ul>
+                        <% for( var index =0; index<permissions.length; index++) {%>
+                        <li> <%= permissions[index] %></li>
+                        <% } %>
+                    </ul>
+                    <% for( var index =0; index<permissions.length; index++) {%>
+                        <input type="hidden" name="permissions" value="<%= permissions[index]%>"></input>
+                    <% } %>
 
-            </form>
-            <div class="row-fluid">
-                <div class="span2 offset2"><p class="lead">Login with </p></div>
-                <div class="span1">
-                    <a href="auth/facebook"><img src="images/facebook-login.png"></img></a>
-                </div>
-                <div class="span1">
-                    <a href="auth/google"><img src="images/google-login.png"></img></a>
-                </div>
-                <div class="span1">
-                    <a href="auth/linkedin"><img src="images/linkedin-login.png"></img></a>
-                </div>
-                <div class="span1">
-                    <a href="auth/twitter"><img src="images/twitter-login.png"></img></a>
-                </div>
-
+                    <input name="status" type="submit" class="btn-small btn-primary" value="Grant"></input>
+                    <input name="status" type="submit" class="btn-small btn-primary" value="Deny"></input>
+                </form>
             </div>
-            <hr></hr>
-            <p class="lead">If you have not signed up, proceed to <a href="signup.html">Sign up</a>Page</a></p>
-            <%} else{ %>
-                <h3>Welcome. You have successfully logged In</h3>
-            <%} %>
         </div>
-
-    </div>
 </div>
 
 <hr></hr>

@@ -581,3 +581,8 @@ body {
     background: #888;
     color: #fff;
 }
+
+.error{
+    color:red;
+    text-align: left;
+}

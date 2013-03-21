@@ -48,7 +48,53 @@
     <hr></hr>
 
     <div class="jumbotron">
-        <section data-aura-widget="signup"></section>
+
+        <div>
+
+            <div class="row-fluid form">
+
+                <h3>Sign Up</h3>
+                <% if(!locals.status) { %>
+                    <form class="form-signin" action="signup.html" method="post">
+                        <input name="username" type="text" class="input-block-level" placeholder="User Name"/>
+                        <input name="email" type="text" class="input-block-level" placeholder="Email address"/>
+                        <input name="password" type="password" class="input-block-level" placeholder="Password"/>
+                        <input name="repeatPassword" type="password" class="input-block-level" placeholder="Repeat Password"/>
+                        <input name="name" type="text" class="input-block-level" placeholder="Full Name"/>
+                        <button class="signup btn btn-large btn-primary" >Sign up</button>
+                    </form>
+                <% } else if(locals.status == 'success'){ %>
+                    <p>You have Successfully Registered</p>
+                    <p><b>Welcome <%=locals.user.name%></b></p>
+                    <a href="/index.html">Proceed to the App</a>
+                <% } else if(locals.status == 'failure'){ %>
+
+                    <form class="form-signin" action="signup.html" method="post">
+
+                        <ul class="error">
+                            <% for(var key in locals.err.errors) { %>
+                            <li>
+                                <%= locals.err.errors[key].type %>
+
+                            </li>
+                            <% } %>
+                        </ul>
+
+
+                        <input name="username" type="text" class="input-block-level" placeholder="User Name"/>
+                        <input name="email" type="text" class="input-block-level" placeholder="Email address"/>
+                        <input name="password" type="password" class="input-block-level" placeholder="Password"/>
+                        <input name="repeatPassword" type="password" class="input-block-level" placeholder="Repeat Password"/>
+                        <input name="name" type="text" class="input-block-level" placeholder="Full Name"/>
+                        <button class="signup btn btn-large btn-primary" >Sign up</button>
+                    </form>
+
+
+                <% } %>
+            </div>
+
+        </div>
+
     </div>
 
     <hr></hr>

@@ -1,7 +1,6 @@
 var express = require('express')
     ,app = express()
     ,passport = require('passport')
-    ,fs = require('fs')
     ,config = require('./config/config')[process.env.AppMode||'development']
 
 
@@ -9,15 +8,8 @@ var express = require('express')
 // database settings
 require('./config/database')(config);
 
-// Bootstrap models
-var models_path = __dirname + '/app/models'
-fs.readdirSync(models_path).forEach(function (file) {
-    require(models_path+'/'+file)
-})
-var models_path = __dirname + '/oauth-server/models'
-fs.readdirSync(models_path).forEach(function (file) {
-    require(models_path+'/'+file)
-})
+require('./config/dataload')();
+
 
 // bootstrap passport config
 require('./config/passport')(passport, config)

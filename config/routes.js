@@ -23,16 +23,20 @@ module.exports = function (app,config,passport) {
 
 
     var oauthPages = require('../oauth-server/controllers/pages/main');
+
+
     app.get('/login.html', oauthPages.login);
+
+    app.get('/grant.html', oauthPages.grant);
+    app.post('/grant.html', oauthPages.grantSubmit);
+
     app.get('/signup.html', oauthPages.signup);
-
-    var users = require('../oauth-server/controllers/api/users')
-    app.post('/api/signup', users.signup)
+    app.post('/signup.html', oauthPages.signupSubmit)
 
 
-    app.post('/api/login',function(req,res){
-        req.session.redirect_url=req.headers.referer;
-        passport.authenticate('local', { successRedirect: req.session.redirect_url,failureRedirect: '/login.html',failureFlash: true })(req,res);
+    app.post('/login.html',function(req,res){
+        var redirectUri = req.body.redirect_uri || '/login.html';
+        passport.authenticate('local', {  successFlash: 'Welcome!', successRedirect: redirectUri,failureRedirect: '/login.html',failureFlash: true })(req,res);
     });
 
 

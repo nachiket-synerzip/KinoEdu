@@ -33,10 +33,6 @@
 
     <div class="masthead">
         <ul class="nav nav-pills pull-right">
-            <li><a href="/index.html#!home">Home</a></li>
-            <li><a href="/index.html#!courses">Courses</a></li>
-            <li><a href="/index.html#!about">About</a></li>
-            <li><a href="/index.html#!contact">Contact</a></li>
             <li><a href="login.html">Login</a></li>
             <li class="active"><a href="signup.html">Sign Up</a></li>
 
@@ -56,11 +52,11 @@
                 <h3>Sign Up</h3>
                 <% if(!locals.status) { %>
                     <form class="form-signin" action="signup.html" method="post">
-                        <input name="username" type="text" class="input-block-level" placeholder="User Name"/>
+                        <input name="name" type="text" class="input-block-level" placeholder="Full Name"/>
                         <input name="email" type="text" class="input-block-level" placeholder="Email address"/>
                         <input name="password" type="password" class="input-block-level" placeholder="Password"/>
                         <input name="repeatPassword" type="password" class="input-block-level" placeholder="Repeat Password"/>
-                        <input name="name" type="text" class="input-block-level" placeholder="Full Name"/>
+
                         <button class="signup btn btn-large btn-primary" >Sign up</button>
                     </form>
                 <% } else if(locals.status == 'success'){ %>
@@ -81,11 +77,11 @@
                         </ul>
 
 
-                        <input name="username" type="text" class="input-block-level" placeholder="User Name"/>
+                        <input name="name" type="text" class="input-block-level" placeholder="Full Name"/>
                         <input name="email" type="text" class="input-block-level" placeholder="Email address"/>
                         <input name="password" type="password" class="input-block-level" placeholder="Password"/>
                         <input name="repeatPassword" type="password" class="input-block-level" placeholder="Repeat Password"/>
-                        <input name="name" type="text" class="input-block-level" placeholder="Full Name"/>
+
                         <button class="signup btn btn-large btn-primary" >Sign up</button>
                     </form>
 

@@ -18,7 +18,8 @@ require('./config/passport')(passport, config)
 require('./config/express')(app,config,passport);
 
 // Bootstrap routes
-require('./config/routes')(app,config,passport);
+require('./oauth-server/config/routes')(app,config,passport);
+require('./app/config/routes')(app,config,passport);
 
 module.exports = app;
 

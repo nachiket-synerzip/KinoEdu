@@ -7,22 +7,7 @@
  */
 
 module.exports = function (app,config,passport) {
-
-    app.get('/',function(req,res){
-        res.redirect('/index.html#!home');
-    });
-    var appPages = require('../app/controllers/pages/main');
-    app.get('/index.html', appPages.index);
-
-    var courses = require('../app/controllers/api/courses');
-    app.get('/api/courses', courses.findAllCourses);
-    app.get('/api/courses/:id', courses.findCourseById);
-    app.post('/api/courses', courses.createCourse);
-    app.put('/api/courses/:id', courses.updateCourseById);
-    app.delete('/api/courses/:id', courses.deleteCourseById);
-
-
-    var oauthPages = require('../oauth-server/controllers/pages/main');
+   var oauthPages = require('../controllers/pages/main');
 
 
     app.get('/login.html', oauthPages.login);
@@ -32,6 +17,8 @@ module.exports = function (app,config,passport) {
 
     app.get('/signup.html', oauthPages.signup);
     app.post('/signup.html', oauthPages.signupSubmit)
+
+    app.post('/grant.html', oauthPages.grantSubmit);
 
 
     app.post('/login.html',function(req,res){

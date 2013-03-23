@@ -23,6 +23,42 @@ module.exports = function (config) {
 
     var User = mongoose.model('User');
     var Client = mongoose.model('Client');
+    var Scope = mongoose.model('Scope');
+    var AuthorizationGrant = mongoose.model('AuthorizationGrant');
+    Scope.remove({},function(){
+
+    });
+
+    var scopes = [
+        {
+            scope:"view-profile",
+            description:"View the User's Profile"
+        },
+        {
+            scope:"view-profile",
+            description:"View the User's Profile"
+        },
+        {
+            scope:"manage-profile",
+            description:"Manager the User's Profile"
+        },
+        {
+            scope:"view-courses",
+            description:"View User's Courses"
+        },
+        {
+            scope:"manage-courses",
+            description:"Manage User's Courses"
+        }
+    ];
+    for(var index=0;index<scopes.length;index++){
+        var scopeJson = scopes[index];
+        var scope = new Scope(scopeJson);
+        scope.save(function (err) {if(err) console.log(err)});
+    }
+
+
+
     User.remove({}, function () {
     });
     var sysUser = new User({
@@ -50,7 +86,7 @@ module.exports = function (config) {
                 user:sysUser._id,
                 name:'KinoEdu Web App',
                 description:'Default KinoEdu Web App Client',
-                redirectURIs:['http://localhost:5000', 'http://www.kinoedu.com']
+                redirectURIs:['http://localhost:5000/index.html', 'http://www.kinoedu.com/index.html']
             });
 
             webAppClient.save(function (err) {
@@ -65,6 +101,7 @@ module.exports = function (config) {
                         if(!err){
                             console.log(client);
                         }
+
                     });
                 }
             })

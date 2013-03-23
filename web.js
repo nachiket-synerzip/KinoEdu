@@ -4,6 +4,11 @@ var express = require('express')
     ,config = require('./config/config')[process.env.AppMode||'development']
 
 
+//Exposing EmailServer as global variable until I know better
+emailServer = require('./config/email')(config);
+
+
+
 
 // database settings
 require('./config/database')(config);

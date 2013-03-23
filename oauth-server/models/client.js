@@ -21,11 +21,11 @@ var mongoose = require('mongoose')
 
 var ClientSchema = new Schema({
     user:{ type: ObjectId, ref: 'User' },
-    name: String,
+    name: {type:String,index: { unique: true }},
     description : String,
     redirectURIs: [String],
     salt: String,
-    clientId: String,
+    clientId: {type:String,index: { unique: true }},
     clientSecret : String
 })
 
@@ -107,11 +107,6 @@ ClientSchema.methods = {
         }
 
         return crypto.createHmac('sha1', this.salt).update(value).digest('hex');
-    },
-
-    match: function(clientId, redirectURI){
-        //TODO Match if redirect_uri has an entry in client with given client_id
-
     }
 }
 

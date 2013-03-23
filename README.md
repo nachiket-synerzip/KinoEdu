@@ -63,6 +63,14 @@ $> export google_clientID = <<Google App Client ID>>
 
 $> export google_clientSecret = <<Google App Client Secret>>
 
+$> export email_send_user = <<Email Username>>
+
+$> export email_send_password = <<Email Password>>
+
+$> export email_host = <<Email Host Server>>
+
+$> export email_ss = <<true/false>>
+
 Settings for Production Mode Deployment on Heroku
 
 $> heroku config:set AppMode = production
@@ -84,6 +92,14 @@ $> heroku config:set linkedin_clientSecret = <<LinkedIn App Client Secret>>
 $> heroku config:set google_clientID = <<Google App Client ID>>
 
 $> heroku config:set google_clientSecret = <<Google App Client Secret>>
+
+$> heroku config:set email_send_user = <<Email Username>>
+
+$> heroku config:set email_send_password = <<Email Password>>
+
+$> heroku config:set email_host = <<Email Host Server>>
+
+$> heroku config:set email_ssl = <<true/false>>
 
 Step 5.
 ------

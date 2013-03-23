@@ -7,7 +7,12 @@
  */
 
 module.exports = function (app,config,passport) {
-   var oauthPages = require('../controllers/pages/main');
+
+
+
+
+
+    var oauthPages = require('../controllers/pages/main');
 
 
     app.get('/login.html', oauthPages.login);
@@ -28,7 +33,9 @@ module.exports = function (app,config,passport) {
 
 
     app.get('/auth/facebook', function(req,res){
-        req.session.redirect_url=req.headers.referer;
+        req.session.redirect_url=req.query['redirect_uri'];
+        console.log('-------');
+        console.log(req.session.redirect_url)
         passport.authenticate('facebook',{ scope: ['email'] })(req,res);
     });
     app.get('/auth/facebook/callback', function(req,res){
@@ -64,5 +71,10 @@ module.exports = function (app,config,passport) {
         passport.authenticate('linkedin', { successRedirect: req.session.redirect_url,
             failureRedirect: '/login.html' })(req,res);
     });
+
+    var oauthAPI = require('../controllers/api/main');
+    app.post('/auth/exchange-token',oauthAPI.exchangeToken);
+
+
 
 }

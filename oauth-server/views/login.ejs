@@ -63,16 +63,16 @@
             <div class="row-fluid">
                 <div class="span2 offset2"><p class="lead">Login with </p></div>
                 <div class="span1">
-                    <a href="auth/facebook"><img src="images/facebook-login.png"></img></a>
+                    <a href="auth/facebook?redirect_uri=<%=encodeURIComponent(req.query['redirect_uri'])%>"><img src="images/facebook-login.png"></img></a>
                 </div>
                 <div class="span1">
-                    <a href="auth/google"><img src="images/google-login.png"></img></a>
+                    <a href="auth/google?redirect_uri=<%=encodeURIComponent(req.query['redirect_uri'])%>"><img src="images/google-login.png"></img></a>
                 </div>
                 <div class="span1">
-                    <a href="auth/linkedin"><img src="images/linkedin-login.png"></img></a>
+                    <a href="auth/linkedin?redirect_uri=<%=encodeURIComponent(req.query['redirect_uri'])%>"><img src="images/linkedin-login.png"></img></a>
                 </div>
                 <div class="span1">
-                    <a href="auth/twitter"><img src="images/twitter-login.png"></img></a>
+                    <a href="auth/twitter?redirect_uri=<%=encodeURIComponent(req.query['redirect_uri'])%>"><img src="images/twitter-login.png"></img></a>
                 </div>
 
             </div>

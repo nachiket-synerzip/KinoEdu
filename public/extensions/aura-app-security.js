@@ -62,16 +62,31 @@ define(function () {
                     //TODO Step 3. Get the User Profile using access_token
                     //TODO Step 4. Store User Profile in local storage and clear url
                     //TODO Step 5. Reset the URL
+                    var jsonData = {code:params.code};
+                    $.ajax({
+                        type: "POST",
+                        url: '/api/access-token',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        data: JSON.stringify(jsonData),
+                        success: function(data){
+                            var accessToken=data.token;
+                            app.sandbox.set('accessToken',accessToken);
 
-                    var accessToken="token789";
-                    app.sandbox.set('accessToken',accessToken);
-                    var userProfile = {
-                        name:'John Smith',
-                        username:'johnsmith',
-                        email:'johnsmith@gmail.com'
-                    };
-                    app.sandbox.set('userProfile',JSON.stringify(userProfile));
+                            //TODO - Do another Ajax Call to get the User Profile
+                            var userProfile = {
+                                name:'John Smith',
+                                username:'johnsmith',
+                                email:'johnsmith@gmail.com'
+                            };
+                            app.sandbox.set('userProfile',JSON.stringify(userProfile));
 
+
+                        },
+                        failure: function(err){
+
+                        }
+                    });
 
                 }
                 else if(params.error!=null && params.state!=null){

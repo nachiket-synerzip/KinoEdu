@@ -19,8 +19,7 @@
         "passport-linkedin":"latest",
         "underscore":"latest" ,
         "view-helpers": "latest",
-	    "oauth2orize":"latest"
-
+        "async":"latest"
     },
     "devDependencies":{
         "mocha":"latest",

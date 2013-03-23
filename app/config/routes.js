@@ -10,6 +10,8 @@ module.exports = function (app,config,passport) {
     app.get('/',function(req,res){
         res.redirect('/index.html#!home');
     });
+    var security = require('../../app/controllers/api/security');
+    app.post('/api/access-token', security.getAccessToken);
 
     var courses = require('../../app/controllers/api/courses');
     app.get('/api/courses', courses.findAllCourses);

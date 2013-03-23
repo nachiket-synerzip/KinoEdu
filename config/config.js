@@ -31,10 +31,13 @@ module.exports = {
             clientID: process.env.google_clientID
             , clientSecret: process.env.google_clientSecret
             , callbackURL: 'http://localhost:5000/auth/google/callback'
+        },
+        email :{
+            user:process.env.email_send_user,
+            password:process.env.email_send_password,
+            host:process.env.email_host,
+            ssl:process.env.email_ssl
         }
-    }
-    , test: {
-
     }
     , production: {
         app: {
@@ -60,6 +63,13 @@ module.exports = {
             clientID: process.env.google_clientID
             , clientSecret: process.env.google_clientSecret
             , callbackURL: 'http://www.kinoedu.com/auth/google/callback'
+        },
+        email :{
+            user:process.env.email_send_user,
+            password:process.env.email_send_password,
+            host:process.env.email_host,
+            ssl:process.env.email_ssl
         }
+
     }
 }

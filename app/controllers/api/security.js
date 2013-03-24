@@ -82,6 +82,7 @@ exports.requireAccessToken = function (req, res, next) {
 }
 
 exports.loadUser = function (req, res, next) {
-    console.log('load User ' + req.user);
+    //TODO Provision to do something specific for Loading User,
+    // else we will remove this
     next();
 }

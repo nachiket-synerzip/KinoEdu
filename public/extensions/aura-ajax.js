@@ -9,7 +9,6 @@ define({
     },
 
     initialize:function (app) {
-        console.log('initialized aura-ajax extension');
         var $ = require('jquery');
         app.sandbox.post = function (url,data,success,failure) {
             $.ajax({

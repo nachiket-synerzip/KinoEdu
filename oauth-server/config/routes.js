@@ -25,17 +25,15 @@ module.exports = function (app,config,passport) {
 
     app.post('/grant.html', oauthPages.grantSubmit);
 
-
+    //TODO - See if we can use app.all and use some sort of filter
     app.post('/login.html',function(req,res){
         var redirectUri = req.body.redirect_uri || '/login.html';
-        passport.authenticate('local', {  successFlash: 'Welcome!', successRedirect: redirectUri,failureRedirect: '/login.html',failureFlash: true })(req,res);
+        passport.authenticate('local', {  successFlash: 'Welcome!', successRedirect: redirectUri,failureRedirect: redirectUri,failureFlash: true })(req,res);
     });
 
 
     app.get('/auth/facebook', function(req,res){
         req.session.redirect_url=req.query['redirect_uri'];
-        console.log('-------');
-        console.log(req.session.redirect_url)
         passport.authenticate('facebook',{ scope: ['email'] })(req,res);
     });
     app.get('/auth/facebook/callback', function(req,res){

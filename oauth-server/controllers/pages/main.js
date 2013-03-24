@@ -126,6 +126,7 @@ exports.grantSubmit = function(req,res){
                 var user = results.user;
                 var client = results.client;
                 if(err){
+                    console.log('Got DB Error while generating code');
                     console.log(err);
                 }
                 else if(user!=null && client!=null){
@@ -137,6 +138,7 @@ exports.grantSubmit = function(req,res){
                     })
                     grant.save(function(err,grant){
                         if(err){
+                            console.log('Got DB Error while saving code');
                             console.log(err);
                         }
                         else{
@@ -168,19 +170,6 @@ exports.exchangeToken = function(req,res){
     var clientSecret = req.body.clientSecret;
     var code = req.body.code;
 
-    console.log("------");
-    console.log(clientId +" "+clientSecret);
-    console.log(code);
-    console.log("------");
-
-    //TODO If clientID & clientSecret Matches and code is Authorization Grant for valid
-    //TODO - Create a AccessToken with following values
-    //TODO      1. AuthorizationGrant
-    //TODO      2. access_token
-    //TODO      3. Expiry Date
-    //TODO   Then reply back {access_code:'...', expiry_date:'....'}
-    //TODO else
-    //TODO   Then reply back {error_code:'....',error_message:'....'}
 
     res.send("{'access_code':'939223','expiry_date':10929832332}");
 }
@@ -249,7 +238,10 @@ exports.signupSubmit = function (req, res) {
 
 
                     // send the message and get a callback with an error or details of the message that was sent
-                    emailServer.send(message, function(err, message) { console.log(err); });
+                    emailServer.send(message, function(err, message) {
+                        console.log('Got Error while sending Email');
+                        console.log(err);
+                    });
 
 
                     res.render('signup',{

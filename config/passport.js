@@ -55,11 +55,6 @@ module.exports = function (passport, config) {
             , callbackURL: config.twitter.callbackURL
         },
         function(token, tokenSecret, profile, done) {
-            console.log("----------------------");
-            console.log("Twitter");
-            console.log("----------------------");
-            console.log(profile);
-            console.log("----------------------");
             User.findOne({ 'twitter.id': profile.id }, function (err, user) {
 
                 if (err) { return done(err) }
@@ -75,7 +70,10 @@ module.exports = function (passport, config) {
                         }
                     })
                     user.save(function (err) {
-                        if (err) console.log(err)
+                        if (err) {
+                            console.log('Error while saving Twitter User');
+                            console.log(err);
+                        }
 
                         return done(err, user)
                     })
@@ -95,11 +93,6 @@ module.exports = function (passport, config) {
             , profileFields: ['id', 'displayName','emails','username','photos']
         },
         function(accessToken, refreshToken, profile, done) {
-            console.log("----------------------");
-            console.log("facebook");
-            console.log("----------------------");
-            console.log(profile);
-            console.log("----------------------");
 
             User.findOne({ 'facebook.id': profile.id }, function (err, user) {
                 if (err) { return done(err) }
@@ -115,7 +108,10 @@ module.exports = function (passport, config) {
                         }
                     })
                     user.save(function (err) {
-                        if (err) console.log(err)
+                        if (err) {
+                            console.log('Error while saving Facebook User');
+                            console.log(err);
+                        }
                         return done(err, user)
                     })
                 }
@@ -133,11 +129,6 @@ module.exports = function (passport, config) {
             profileFields: ['id', 'first-name', 'last-name', 'email-address', 'picture-url','headline']
         },
         function(token, tokenSecret, profile, done) {
-            console.log("----------------------");
-            console.log("Linkedin");
-            console.log("----------------------");
-            console.log(profile);
-            console.log("----------------------");
 
             User.findOne({ 'linkedin.id': profile.id }, function (err, user) {
                 if (err) { return done(err) }
@@ -154,7 +145,10 @@ module.exports = function (passport, config) {
                         }
                     })
                     user.save(function (err) {
-                        if (err) console.log(err)
+                        if (err) {
+                            console.log('Error while saving LinkedIn User');
+                            console.log(err);
+                        }
                         return done(err, user)
                     })
                 }
@@ -172,11 +166,6 @@ module.exports = function (passport, config) {
             callbackURL: config.google.callbackURL
         },
         function(accessToken, refreshToken, profile, done) {
-            console.log("----------------------");
-            console.log("Google");
-            console.log("----------------------");
-            console.log(profile);
-            console.log("----------------------");
 
             User.findOne({ 'google.id': profile.id }, function (err, user) {
                 if (!user) {
@@ -191,7 +180,10 @@ module.exports = function (passport, config) {
                         }
                     })
                     user.save(function (err) {
-                        if (err) console.log(err)
+                        if (err) {
+                            console.log('Error while saving Google User');
+                            console.log(err);
+                        }
                         return done(err, user)
                     })
                 } else {

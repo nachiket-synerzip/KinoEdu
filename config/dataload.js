@@ -52,13 +52,19 @@ module.exports = function (config) {
     for(var index=0;index<scopes.length;index++){
         var scopeJson = scopes[index];
         var scope = new Scope(scopeJson);
-        scope.save(function (err) {if(err) console.log(err)});
+        scope.save(function (err) {
+            if(err) {
+                console.log('Error Inserting Scope in DB');
+                console.log(err);
+            }
+        });
     }
 
     var userAvailableCallback = function(user){
         Client.findOne({name:config.mainClient.name},function(err,client){
             if(err){
                 console.log('Error while finding main client');
+                console.log(err);
             }
             else if(client==null){
                 console.log('Main Client not found creating one........');
@@ -77,8 +83,8 @@ module.exports = function (config) {
                         console.log(err);
                     }
                     else {
-                        console.log("Successfully Create Main Client");
-                        console.log('All Systems checked, proceeding to Starting App');
+                        console.log("Successfully Create Main Client.....");
+                        console.log('All Systems checked, proceeding to Starting App.....');
                     }
                 });
             }

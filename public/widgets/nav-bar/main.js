@@ -5,12 +5,18 @@ define(['underscore', 'hbs!./nav-bar'], function (_, navBarTemplate) {
         type:'Backbone',
 
         events:{
-
+            "click .view-profile":"viewProfile",
+            "click .logout":"logout"
+        },
+        viewProfile:function(event){
+            alert('viewProfile');
+        },
+        logout:function(event){
+            this.sandbox.security.logout();
+            this.render();
         },
 
-
         initialize:function () {
-            this.render();
             this.render();
 
         },

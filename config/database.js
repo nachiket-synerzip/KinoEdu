@@ -12,6 +12,7 @@ module.exports = function (config) {
     mongoose.connect(config.db, function (err, res) {
         if (err) {
             console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+            console.log(err);
         }
     });
 }

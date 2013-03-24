@@ -52,8 +52,6 @@ exports.findCourseById = function(req, res){
 
 //U - Update
 exports.updateCourseById = function(req,res){
-    console.log("PUT: ");
-    console.log(req.body);
     CourseModel.findById(req.params.id, function (err, course) {
         course.title = req.body.title;
         course.description = req.body.description;

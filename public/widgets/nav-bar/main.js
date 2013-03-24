@@ -15,6 +15,7 @@ define(['underscore', 'text!./templates/nav-bar.html'],
         },
         logout:function(event){
             this.sandbox.security.logout();
+            this.sandbox.emit('refresh');
             this.render();
         },
 

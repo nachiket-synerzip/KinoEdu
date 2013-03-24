@@ -17,6 +17,10 @@ define(['underscore', 'text!./templates/courses.html'],
                 }
 
             });
+
+            this.sandbox.on('refresh',function(){
+                self.fetchCourseData();
+            });
             this.fetchCourseData();
         },
 
@@ -24,8 +28,8 @@ define(['underscore', 'text!./templates/courses.html'],
             this.html(this.template(coursesData));
         },
         fetchCourseData:function(){
-            var coursesData = null;
             var self = this;
+            var coursesData = null;
             this.sandbox.security.isLoggedIn(function(err,isLoggedIn){
                 if(isLoggedIn){
                     coursesData = [

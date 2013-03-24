@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var User = mongoose.model( 'User');
 var Client = mongoose.model( 'Client');
 var AuthorizationGrant = mongoose.model( 'AuthorizationGrant');
+var AccessCode = mongoose.model( 'AccessCode');
 
 
 exports.exchangeToken = function(req,res){
@@ -27,11 +28,11 @@ exports.exchangeToken = function(req,res){
     async.parallel({
 
             client:function(callback){
-                Client.findOne({'clientId':clientId},callback).populate();
+                Client.findOne({'clientId':clientId},callback).populate('user');
 
             },
             grant:function(callback){
-                AuthorizationGrant.findOne({'code':code},callback).populate();
+                AuthorizationGrant.findOne({'code':code},callback).populate('user','client');
             }
 
         },
@@ -41,7 +42,7 @@ exports.exchangeToken = function(req,res){
             if(err){
                 console.log(err);
             }
-            else if(user!=null && client!=null){
+            else if(grant!=null && client!=null){
                 var token = new AccessCode({
                     user:grant.user._id,
                     client:client._id,
@@ -53,9 +54,7 @@ exports.exchangeToken = function(req,res){
                         res.respond({'error_code':'error'});
                     }
                     else{
-                        console.log('----Success---')
-                        console.log(token);
-                        res.respond({'access_code':token.token});
+                        res.send({'access_token':token.token});
                     }
                 });
             }

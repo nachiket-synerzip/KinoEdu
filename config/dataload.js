@@ -10,6 +10,8 @@ var mongoose = require('mongoose')
     , fs = require('fs')
 
 module.exports = function (config) {
+
+
     // Bootstrap models
     var models_path = __dirname + '/../app/models'
     fs.readdirSync(models_path).forEach(function (file) {
@@ -35,10 +37,6 @@ module.exports = function (config) {
             description:"View the User's Profile"
         },
         {
-            scope:"view-profile",
-            description:"View the User's Profile"
-        },
-        {
             scope:"manage-profile",
             description:"Manager the User's Profile"
         },
@@ -57,57 +55,87 @@ module.exports = function (config) {
         scope.save(function (err) {if(err) console.log(err)});
     }
 
+    var userAvailableCallback = function(user){
+        Client.findOne({name:config.mainClient.name},function(err,client){
+            if(err){
+                console.log('Error while finding main client');
+            }
+            else if(client==null){
+                console.log('Main Client not found creating one........');
+                var mainClient = new Client({
+                    user:user._id,
+                    name: config.mainClient.name,
+                    clientId:'kino',
+                    clientSecret:'secret',
+                    description : config.mainClient.description,
+                    redirectURIs: config.mainClient.redirectURIs.split(',')
+                })
 
+                mainClient.save(function(err,mainClient){
+                    if (err) {
+                        console.log("Got Error while Creating Client " + mainClient);
+                        console.log(err);
+                    }
+                    else {
+                        console.log("Successfully Create Main Client");
+                        console.log('All Systems checked, proceeding to Starting App');
+                    }
+                });
+            }
+            else if(client!=null){
+                if(client.user != user._id){
+                    client.user = user._id;
+                    console.log('Updating client with new user...')
+                    client.save(function(err,client){
+                        if(err){
 
-    User.remove({}, function () {
-    });
-    var sysUser = new User({
-        name:'Rohit Ghatol',
-        email:'rohitsghatol@gmail.com',
-        username:'rohitghatol',
-        password:'welcome',
-        provider:'local'
-
-    });
-    sysUser.save(function (err) {
-        if (err) {
-            console.log("Got Error while Creating User " + sysUser);
-            console.log(err);
+                        }
+                        else{
+                            console.log('Client successfully updated....')
+                            console.log('All Systems checked, proceeding to Starting App');
+                        }
+                    });
+                }
+                else{
+                    console.log('Main Client already exists...');
+                    console.log('All Systems checked, proceeding to Starting App');
+                }
+            }
+        }).populate('user');
+    }
+    //Ensure we have Admin User injected in Database
+    User.findOne({email:config.adminUser.email,provider:'local'},function(err,user){
+        if(err){
+            console.log('Error Finding Admin User with email address '+config.adminUser.email);
         }
-        else {
-            console.log("Successfully Create Default User");
-            console.log(sysUser);
-            Client.remove({}, function () {
+        //Create the user if not already present
+        else if(user==null){
+            console.log('User does not exists......');
+            var adminUser = new User({
+                name:config.adminUser.name,
+                email:config.adminUser.email,
+                password:config.adminUser.password,
+                provider:'local'
+
             });
 
-            var webAppClient = new Client({
-                clientId:'kino',
-                clientSecret:'secret',
-                user:sysUser._id,
-                name:'KinoEdu Web App',
-                description:'Default KinoEdu Web App Client',
-                redirectURIs:['http://localhost:5000/index.html', 'http://www.kinoedu.com/index.html']
-            });
-
-            webAppClient.save(function (err) {
-
+            adminUser.save(function (err) {
                 if (err) {
-                    console.log("Got Error while Creating Client " + webAppClient);
+                    console.log("Got Error while Creating User " + adminUser);
                     console.log(err);
                 }
                 else {
-                    console.log("Successfully created Client");
-                    Client.findOne().populate('user','username name').exec(function (err, client){
-                        if(!err){
-                            console.log(client);
-                        }
-
-                    });
+                    console.log('User successfully created.....');
+                    userAvailableCallback(adminUser);
                 }
-            })
-
+            });
         }
-    })
+        else if(user!=null){
+            console.log('User already exists.....')
+            userAvailableCallback(user);
+        }
+    });
+
 
 
 }

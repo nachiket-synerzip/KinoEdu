@@ -60,10 +60,10 @@ AccessCode.path('client').validate(function (client) {
 AccessCode.pre('save', function(next) {
 
     this.salt = this.makeSalt();
-
     if(this.token == null){
-        this.token = this.encrypt(this.redirectURI);
+        this.token = this.encrypt(this.scope.join(' '));
     }
+
 
     next();
 

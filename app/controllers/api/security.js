@@ -27,11 +27,11 @@ exports.getAccessToken = function(request,response){
     var post = http.request(options, function(res) {
         res.setEncoding('utf8');
         res.on('data', function (data) {
-            console.log('Response: ' + data);
-            response.send({'access_token':data.token});
+            response.send(data);
         });
     });
 
+    //TODO read it from process.env variable
     var data = {
         clientId:'kino',
         clientSecret:'secret',

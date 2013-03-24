@@ -13,7 +13,7 @@ emailServer = require('./config/email')(config);
 // database settings
 require('./config/database')(config);
 
-require('./config/dataload')();
+require('./config/dataload')(config);
 
 
 // bootstrap passport config

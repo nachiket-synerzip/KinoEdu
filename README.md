@@ -69,7 +69,19 @@ $> export email_send_password = <<Email Password>>
 
 $> export email_host = <<Email Host Server>>
 
-$> export email_ss = <<true/false>>
+$> export email_ssl = <<true/false>>
+
+$> export admin_name = <<user name for admin user>>
+
+$> export admin_email = <<email for admin user>>
+
+$> export admin_password = <<password for admin user>>
+
+$> export main_client_name = <<name of the main client>>
+
+$> export main_client_description = <<description of the main client>>
+
+$> export main_client_redirectURIs = <<redirect_uris for the main client>>
 
 Settings for Production Mode Deployment on Heroku
 
@@ -100,6 +112,19 @@ $> heroku config:set email_send_password = <<Email Password>>
 $> heroku config:set email_host = <<Email Host Server>>
 
 $> heroku config:set email_ssl = <<true/false>>
+
+$> heroku config:set admin_name = <<user name for admin user>>
+
+$> heroku config:set admin_email = <<email for admin user>>
+
+$> heroku config:set admin_password = <<password for admin user>>
+
+$> heroku config:set main_client_name = <<name of the main client>>
+
+$> heroku config:set main_client_description = <<description of the main client>>
+
+$> heroku config:set main_client_redirectURIs = <<redirect_uris for the main client>>
+
 
 Step 5.
 ------

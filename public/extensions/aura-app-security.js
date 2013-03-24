@@ -70,7 +70,7 @@ define(function () {
                         dataType: "json",
                         data: JSON.stringify(jsonData),
                         success: function(data){
-                            var accessToken=data.token;
+                            var accessToken=data.access_token;
                             app.sandbox.set('accessToken',accessToken);
 
                             //TODO - Do another Ajax Call to get the User Profile

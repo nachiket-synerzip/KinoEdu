@@ -51,8 +51,8 @@ define(function () {
                 };
 
                 app.sandbox.security.logout = function (callback) {
-                    app.sandbox.set('accessToken', null);
-                    app.sandbox.set('userProfile', null);
+                    app.sandbox.remove('accessToken');
+                    app.sandbox.remove('userProfile');
                     if(callback){
                         callback(null,true);
                     }

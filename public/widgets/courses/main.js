@@ -7,9 +7,6 @@ define(['underscore', 'text!./templates/courses.html'],
         template:_.template(CoursesTemplate),
 
         initialize:function () {
-
-
-            this.render();
             var self = this;
             this.sandbox.on('router', function (path) {
                 if (path == 'courses') {
@@ -20,12 +17,55 @@ define(['underscore', 'text!./templates/courses.html'],
                 }
 
             });
+            this.fetchCourseData();
         },
 
-        render:function () {
+        render:function (coursesData) {
+            this.html(this.template(coursesData));
+        },
+        fetchCourseData:function(){
+            var coursesData = null;
+            var self = this;
+            this.sandbox.security.isLoggedIn(function(err,isLoggedIn){
+                if(isLoggedIn){
+                    coursesData = [
+                        {
+                            title:"Dashboard"
+                        },
+                        {
+                            title:"All Courses"
+                        },
+                        {
+                            title:"On Going"
+                        },
+                        {
+                            title:"Completed"
+                        },
+                        {
+                            title:"Created"
+                        },
+                        {
+                            title:"Favorite"
+                        }
+                    ];
+                }
+                else{
+                    coursesData = [
+                        {
+                            title:"Dashboard"
+                        },
+                        {
+                            title:"All Courses"
+                        }
+                    ];
+                }
+                self.render({'coursesData':coursesData});
 
-            this.html(this.template());
+            });
+
         }
+
+
 
 
     }

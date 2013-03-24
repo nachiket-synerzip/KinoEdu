@@ -1,11 +1,9 @@
 <div class="secondhead">
-    <ul class="nav nav-tabs">
 
-        <li class="active">
-            <a href="#">Dashboard</a>
-        </li>
-        <li><a href="#">All Courses</a></li>
-        <li><a href="#">Leadership Board</a></li>
+    <ul class="nav nav-tabs">
+        <% _.each( coursesData, function( courseEntry,index ){%>
+        <li <% if(index==0){%> class="active"<% } %> ><a href="#"><%=courseEntry.title%></a></li>
+        <% }) %>
     </ul>
 </div>
 

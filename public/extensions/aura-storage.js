@@ -9,6 +9,9 @@ define({
   },
 
   initialize: function(app) {
+    app.sandbox.remove=function(key){
+      localStorage.removeItem(key)
+    }
     app.sandbox.set=function(key,value){
         localStorage[key] = value;
     }

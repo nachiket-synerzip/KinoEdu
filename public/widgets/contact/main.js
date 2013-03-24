@@ -1,9 +1,10 @@
-define(['underscore', 'hbs!./contact'], function (_, contactTemplate) {
+define(['underscore', 'text!./templates/contact.html'],
+    function (_, ContactTemplate) {
 
     return {
 
         type:'Backbone',
-
+        template:_.template(ContactTemplate),
 
         initialize:function () {
             this.render();
@@ -21,7 +22,7 @@ define(['underscore', 'hbs!./contact'], function (_, contactTemplate) {
 
         render:function () {
 
-            this.html(contactTemplate());
+            this.html(this.template());
         }
 
 

@@ -1,8 +1,10 @@
-define(['underscore', 'hbs!./nav-bar'], function (_, navBarTemplate) {
+define(['underscore', 'text!./templates/nav-bar.html'],
+    function (_, NavBarTemplate) {
 
     return {
 
         type:'Backbone',
+        template:_.template(NavBarTemplate),
 
         events:{
             "click .view-profile":"viewProfile",
@@ -33,7 +35,8 @@ define(['underscore', 'hbs!./nav-bar'], function (_, navBarTemplate) {
             var data = {};
             data.userProfile = userProfile;
             data.loginUrl=baseUri+"/grant.html"+"?client_id=kino&scope=view-profile,manage-profile,view-courses,manage-courses&redirect_uri="+baseUri+"/index.html&response_type=grant&state=abc"
-            this.html(navBarTemplate(data));
+
+            this.html(this.template(data));
 
         }
 

@@ -1,11 +1,14 @@
-define(['underscore', 'hbs!./courses'], function (_, coursesTemplate) {
+define(['underscore', 'text!./templates/courses.html'],
+    function (_, CoursesTemplate) {
 
     return {
 
         type:'Backbone',
-
+        template:_.template(CoursesTemplate),
 
         initialize:function () {
+
+
             this.render();
             var self = this;
             this.sandbox.on('router', function (path) {
@@ -21,9 +24,8 @@ define(['underscore', 'hbs!./courses'], function (_, coursesTemplate) {
 
         render:function () {
 
-            this.html(coursesTemplate());
+            this.html(this.template());
         }
-
 
 
     }

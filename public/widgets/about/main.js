@@ -1,9 +1,10 @@
-define(['underscore', 'hbs!./about'], function (_, aboutTemplate) {
+define(['underscore', 'text!./templates/about.html'],
+    function (_, AboutTemplate) {
 
     return {
 
         type:'Backbone',
-
+        template:_.template(AboutTemplate),
 
         initialize:function () {
             this.render();
@@ -21,7 +22,7 @@ define(['underscore', 'hbs!./about'], function (_, aboutTemplate) {
 
         render:function () {
 
-            this.html(aboutTemplate());
+            this.html(this.template());
         }
 
 

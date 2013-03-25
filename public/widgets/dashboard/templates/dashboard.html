@@ -1,0 +1,27 @@
+<div class="row-fluid">
+    <div class="span2 offset8"> Create Course [+]</div>
+</div>
+
+<% _.each( dashboardData, function( dashboardEntry,index ){
+        var rowStart = (index%3 == 0);
+        var rowEnd =   rowStart && (index!=0);
+%>
+<% if(rowEnd){ %>
+</div>
+<% } %>
+<% if(rowStart){ %>
+    <div class="row-fluid">
+
+<% } %>
+        <div class="span4">
+
+            <div class="dashboard-panel">
+                <h5><%=dashboardEntry.panelName%></h5>
+                <section data-aura-widget="<%=dashboardEntry.widget%>"></section>
+            </div>
+        </div>
+
+
+
+
+<% }) %>

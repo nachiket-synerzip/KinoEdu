@@ -586,3 +586,13 @@ body {
     color:red;
     text-align: left;
 }
+
+.dashboard-panel{
+    border:1px solid black;
+    width:200px;
+    padding:2px;
+    margin:10px;
+}
+.dashboard-panel h5{
+
+}

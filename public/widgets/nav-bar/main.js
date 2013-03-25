@@ -21,7 +21,6 @@ define(['underscore', 'text!./templates/nav-bar.html'],
 
         initialize:function () {
             this.render();
-
         },
 
         render:function () {

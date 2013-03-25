@@ -9,7 +9,8 @@ define(['underscore', 'text!./templates/courses.html'],
         initialize:function () {
             var self = this;
             this.sandbox.on('router', function (path) {
-                if (path == 'courses') {
+
+                if (path.indexOf('courses')!=-1) {
                     self.$el.show();
                 }
                 else {
@@ -34,32 +35,40 @@ define(['underscore', 'text!./templates/courses.html'],
                 if(isLoggedIn){
                     coursesData = [
                         {
-                            title:"Dashboard"
+                            tabName:"Dashboard",
+                            widget:"dashboard"
                         },
                         {
-                            title:"All Courses"
+                            tabName:"All Courses",
+                            widget:"all-courses"
                         },
                         {
-                            title:"On Going"
+                            tabName:"On Going",
+                            widget:"on-going-courses"
                         },
                         {
-                            title:"Completed"
+                            tabName:"Completed",
+                            widget:"completed-courses"
                         },
                         {
-                            title:"Created"
+                            tabName:"Created",
+                            widget:"created-courses"
                         },
                         {
-                            title:"Favorite"
+                            tabName:"Favorite",
+                            widget:"favorite-courses"
                         }
                     ];
                 }
                 else{
                     coursesData = [
                         {
-                            title:"Dashboard"
+                            tabName:"Dashboard",
+                            widget:"dashboard"
                         },
                         {
-                            title:"All Courses"
+                            tabName:"All Courses",
+                            widget:"all-courses"
                         }
                     ];
                 }

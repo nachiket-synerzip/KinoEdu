@@ -2,28 +2,11 @@
 
     <ul class="nav nav-tabs">
         <% _.each( coursesData, function( courseEntry,index ){%>
-        <li <% if(index==0){%> class="active"<% } %> ><a href="#"><%=courseEntry.title%></a></li>
+        <li <% if(index==0){%> class="active"<% } %> ><a href="#!courses/<%=courseEntry.widget%>" data-target="<%=courseEntry.widget%>"><%=courseEntry.tabName%></a></li>
         <% }) %>
     </ul>
 </div>
 
-<div class="jumbotron">
-    <div class="row-fluid">
-
-        <div class="span12">
-
-            <div class="span4">
-                <section data-aura-widget="courseInfo"></section>
-                <section data-aura-widget="courseInfo"></section>
-            </div>
-
-            <div class="span4">
-                <section data-aura-widget="courseInfo"></section>
-            </div>
-            <div class="span4">
-                <section data-aura-widget="courseInfo"></section>
-            </div>
-        </div>
-    </div>
-    <div> Work under progress ....</div>
-</div>
+<% _.each( coursesData, function( courseEntry,index ){%>
+<section data-aura-widget="<%=courseEntry.widget%>" <% if(index!=0){%> style="display:none"<% } %> ></section>
+<% }) %>

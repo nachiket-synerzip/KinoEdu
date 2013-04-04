@@ -16,7 +16,7 @@ var express = require('express')
 module.exports = function (app,config,passport) {
 
     app.configure(function(){
-
+        app.use(express.compress());
         app.use(express.static(__dirname + '/../public'));
         app.set('views',__dirname+'/../oauth-server/views');
 

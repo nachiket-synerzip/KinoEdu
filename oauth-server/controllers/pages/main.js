@@ -23,6 +23,7 @@ exports.grant = function(req,res){
         var async = require('async');
         async.parallel({
             client:function(callback){
+                console.log('finding client with clientId '+clientId +' and redirectURI '+redirectURI) ;
                 Client.findOne({'clientId':clientId,'redirectURIs':redirectURI},callback);
             },
             scope:function(callback){

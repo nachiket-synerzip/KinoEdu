@@ -52,7 +52,7 @@ module.exports = {
             clientID:process.env.twitter_clientID, clientSecret:process.env.twitter_clientSecret, callbackURL:'http://www.kinoedu.com/auth/twitter/callback'
         },
         linkedin:{
-            clientID:process.env.linkedin_clientID, clientSecret:process.env.linked_clientSecret, callbackURL:'http://www.kinoedu.com/auth/linkedin/callback'
+            clientID:process.env.linkedin_clientID, clientSecret:process.env.linkedin_clientSecret, callbackURL:'http://www.kinoedu.com/auth/linkedin/callback'
         },
         google:{
             clientID:process.env.google_clientID, clientSecret:process.env.google_clientSecret, callbackURL:'http://www.kinoedu.com/auth/google/callback'

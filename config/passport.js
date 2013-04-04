@@ -17,7 +17,9 @@ var mongoose = require('mongoose')
 
 module.exports = function (passport, config) {
 
-
+    console.log("----------");
+    console.log(config);
+    console.log("----------");
     // serialize sessions
     passport.serializeUser(function(user, done) {
         done(null, user.id)

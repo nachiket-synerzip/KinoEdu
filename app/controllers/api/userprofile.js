@@ -5,9 +5,6 @@
  * Time: 11:53 PM
  * To change this template use File | Settings | File Templates.
  */
-var mongoose = require('mongoose');
-var User = mongoose.model( 'User');
-
 
 exports.getUser = function(req, res){
     if(req.user!=null){

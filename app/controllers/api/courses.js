@@ -5,78 +5,27 @@
  * Time: 11:53 PM
  * To change this template use File | Settings | File Templates.
  */
-var mongoose = require('mongoose');
-var CourseModel = mongoose.model( 'Course');
 
 // C - Create
 exports.createCourse = function(req,res){
-    var course;
-
-
-    course = new CourseModel({
-        title: req.body.title,
-        description: req.body.description,
-    });
-    course.save(function (err) {
-        if (!err) {
-            return console.log("created");
-        } else {
-            return console.log(err);
-        }
-    });
-    return res.send(course);
+  return res.send(200, {'msg': 'ToDo'});
 };
 
 //R - Retrieve
 exports.findAllCourses = function(req, res){
-    CourseModel.find(function (err, courses) {
-        if (!err) {
-            return res.send(courses);
-        } else {
-            return console.log(err);
-        }
-    });
-
+  return res.send(200, {'msg': 'ToDo'});
 };
 
 exports.findCourseById = function(req, res){
-
-    CourseModel.findById(req.params.id, function (err, course) {
-        if (!err) {
-            return res.send(course);
-        } else {
-            return console.log(err);
-        }
-    })
+  return res.send(course);
 };
 
 //U - Update
 exports.updateCourseById = function(req,res){
-    CourseModel.findById(req.params.id, function (err, course) {
-        course.title = req.body.title;
-        course.description = req.body.description;
-
-        return course.save(function (err) {
-            if (!err) {
-                console.log("updated");
-            } else {
-                console.log(err);
-            }
-            return res.send(course);
-        });
-    });
+  return res.send(200, {'msg': 'ToDo'});
 };
 
 //D - Delete
 exports.deleteCourseById = function(req,res){
-    CourseModel.findById(req.params.id, function (err, course) {
-        return course.remove(function (err) {
-            if (!err) {
-                console.log("removed");
-                return res.send('');
-            } else {
-                console.log(err);
-            }
-        });
-    });
-}
+  return res.send(200, {'msg': 'ToDo'});
+};

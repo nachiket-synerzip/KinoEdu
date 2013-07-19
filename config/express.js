@@ -7,13 +7,12 @@
  */
 
 var express = require('express')
-    , mongoStore = require('connect-mongo')(express)
-    , flash = require('connect-flash')
     , helpers = require('view-helpers')
 
 
 
-module.exports = function (app,config,passport) {
+//module.exports = function (app,config,passport) {
+module.exports = function (app, config) {
 
     app.configure(function(){
         app.use(express.compress());
@@ -32,21 +31,7 @@ module.exports = function (app,config,passport) {
         app.use(express.bodyParser());
         app.use(express.methodOverride());
 
-        // express/mongo session storage
-        app.use(express.session({
-            secret: 'noobjs',
-            store: new mongoStore({
-                url: config.db,
-                collection : 'sessions'
-            })
-        }))
-
-        app.use(flash())
-        // use passport session
-        app.use(passport.initialize())
-        app.use(passport.session())
         app.use(app.router);
-
 
     });
 

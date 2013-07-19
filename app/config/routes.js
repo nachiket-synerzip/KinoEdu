@@ -6,17 +6,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-module.exports = function (app,config,passport) {
+module.exports = function (app, config) {
     app.get('/',function(req,res){
         res.redirect('/index.html#!home');
     });
-
-
-
-    var security = require('../../app/controllers/api/security');
-    app.all('/api/*',security.requireAccessToken,security.loadUser);
-
-    app.post('/api/access-token', security.getAccessToken);
 
     var userProfile = require('../../app/controllers/api/userprofile');
     app.get('/api/user/profile',userProfile.getUser);
@@ -27,8 +20,4 @@ module.exports = function (app,config,passport) {
     app.post('/api/courses', courses.createCourse);
     app.put('/api/courses/:id', courses.updateCourseById);
     app.delete('/api/courses/:id', courses.deleteCourseById);
-
-
-
-
 }
